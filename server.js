@@ -1,5 +1,7 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = {
+
+};
 
 // Require Express to run server and routes
 
@@ -17,3 +19,4 @@ app.use(express.static('website'));
 
 
 // Setup Server
+//https://review.udacity.com/#!/rubrics/4671/view
