@@ -20,10 +20,10 @@ const retrieveData = async () =>{
     // Write updated data to DOM elements
     document.getElementById('temp').innerHTML = Math.round(allData.temp)+ 'degrees';
     document.getElementById('content').innerHTML = allData.feel;
-    document.getElementById(""date"").innerHTML =allData.date;
+    document.getElementById("date").innerHTML =allData.date;
     }
     catch(error) {
-      console.log(""error"", error);
+      console.log("error", error);
       // appropriately handle the error
     }
    }
