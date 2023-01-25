@@ -77,6 +77,12 @@ const retrieveDataFromOpenWeatherApp = async () => {
     `;
 
     console.log(logString);
+
+    //Sending the data to Server
+    PostDataToServer(allData);
+
+
+    //Updating the UI
     UpdateUI(logString);
   }
   catch (error) {
@@ -86,13 +92,17 @@ const retrieveDataFromOpenWeatherApp = async () => {
 
 
 }
+function PostDataToServer(DataObj) {
+//................................
+//................................
+//................................
+//................................
+}
 
 function UpdateUI(Text) {
 
       // Write updated data to DOM elements
-      // document.getElementById('temp').innerHTML = Math.round(allData.temp) + 'degrees';
       document.getElementById('content').innerHTML = Text;
-      // document.getElementById("date").innerHTML = allData.date;
 
 }
 
