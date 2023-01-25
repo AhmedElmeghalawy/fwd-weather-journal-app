@@ -25,11 +25,6 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
-// app.get('/', function (req, res) {
-//     res.send('hello world');
-//   })
-
 // Setup Server
 let port = 8080;
 const server = app.listen(port, ()=>{listening()})
@@ -40,6 +35,19 @@ function listening(){
 }
 
 
+app.post('/postData', function (req, res) {
+  projectData={
+    temp:req.body.temp,
+    date:req.body.date,
+    content:req.body.content
+  };
+  res.send(projectData).status(200);
+})
+
+
+app.get('/getData', function (req, res) {
+  res.send(projectData).status(200);
+})
 
 
 
