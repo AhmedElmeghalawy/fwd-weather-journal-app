@@ -1,5 +1,5 @@
 body{
-    background: hsl(60, 2%, 21%);
+    background: hsl(0, 0%, 15%);
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
     border: 50;
@@ -8,26 +8,17 @@ body{
 }
 
 #app{
-    align-content:center ;
-    align-self:center ;
-    align-items:center ;
-    display: inline-block;
-    /* grid-auto-rows: minmax(150px, auto); */
-    /* grid-template-columns:  */
-    /* height:100vh; */
-    background: #3a3434;
     color: #ffffff;
-    /* justify-content: center; */
-    /* grid-gap: 1em; */
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    position: absolute;
 }
+
 
 .holder{
     align-content:center ;
     align-self:center ;
     align-items:center ;
+    border-radius: 10px;
 }
 
 .entry{
@@ -59,23 +50,22 @@ body{
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
-    /* display:flex; */
     font-size: 27px;
 }
 
 input{
     /* display:block; */
     height: 40px;
-    width: 320px;
+    /* width: 320px; */
     background:#ffffff;
     color: #8d4545;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    border: none;
+    /* border: none; */
 }
 
 button{
-    width: 320px;
+    /* width: 320px; */
     height: 60px;
     background:#ffffff;
     color: #8d4545;
@@ -88,7 +78,7 @@ h1{
 }
 
 textarea{
-    width: 320px;
+    /* width: 320px; */
     background:#ffffff;
     color: #000000;
     font-size: 20px;
