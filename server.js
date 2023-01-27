@@ -17,7 +17,6 @@ app.use(cors());
 app.use(express.static("website"));
 
 app.post("/post1", function (req, res) {
-  console.log("postData!");
 
   projectData = {
     zipCode: req.body.zipCode,
@@ -31,7 +30,8 @@ app.post("/post1", function (req, res) {
 
     date: req.body.date,
   };
-  projectData.cityName ="123";
+  console.log("postData!");
+  console.log(req.body);
   res.send(projectData).status(200);
 });
 

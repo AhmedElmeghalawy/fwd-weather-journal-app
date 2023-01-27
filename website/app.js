@@ -63,7 +63,7 @@ const retrieveDataFromOpenWeatherApp = async () => {
   try {
     // Transform into JSON
     const allData = await request.json();
-    console.log(allData);
+    // console.log(allData);
 
     customUserDataObject.cityName = allData.name;
     customUserDataObject.temp = allData.main.temp;
@@ -74,27 +74,27 @@ const retrieveDataFromOpenWeatherApp = async () => {
   }
 };
 
-postDataToServer = async () => {
-  const request = await fetch(`http://127.0.0.1/post`);
-  try {
-    // Transform into JSON
-    const allData = await request.json();
-    console.log(allData);
+postDataToServer = function (){
+  fetch(`http://127.0.0.1/post1`, {
+    method: "POST",
+    headers: {
+      'Accept': "application/json",
+      'Content-Type': "application/json",
+    },
 
-    customUserDataObject.cityName = allData.name;
-    customUserDataObject.temp = allData.main.temp;
-    customUserDataObject.Country = allData.sys.country;
+    body: JSON.stringify({customUserDataObject}) 
+  });
+
+    // customUserDataObject.cityName = allData.name;
+    // customUserDataObject.temp = allData.main.temp;
+    // customUserDataObject.Country = allData.sys.country;
 
     //Updating the UI
     UpdateUI(customUserDataObject);
-
-  } catch (error) {
-    console.log("error", error);
-    // appropriately handle the error
-  }
 };
 
 function UpdateUI(customUserDataObject) {
+
   const logString = `
     Country: ${customUserDataObject.Country} |
     city name: ${customUserDataObject.cityName} |
@@ -106,5 +106,4 @@ function UpdateUI(customUserDataObject) {
   // Write updated data to DOM elements
   document.getElementById("content").innerHTML = logString;
   console.log("UI Updated!");
-
 }
