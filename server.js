@@ -22,7 +22,6 @@ app.post("/post1", function (req, res) {
     zipCode: req.body.zipCode,
     fealings: req.body.fealings,
 
-    unitType: req.body.unitType,
     countryCode: req.body.countryCode,
 
     cityName: req.body.cityName,

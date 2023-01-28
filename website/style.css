@@ -1,37 +1,59 @@
 body{
-    background: hsl(0, 0%, 15%);
+    background: hsl(194, 95%, 77%);
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
     border: 50;
-    border-radius: 50;
-    box-shadow: 2px 4px 5px #444;
+    border-radius: 10px;
+    box-shadow: 3px 7px 9px rgba(0, 0, 0, 0.514);
 }
 
 #app{
-    color: #ffffff;
+    color: #000000;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    text-align: center;
+    opacity: 85%;
+    text-shadow: #444;
+    padding-top: 1px;
 }
 
 
 .holder{
-    align-content:center ;
-    align-self:center ;
-    align-items:center ;
+    align-content:space-around ;
+    align-self:stretch ;
+    align-items:stretch ;
     border-radius: 10px;
-}
-
-.entry{
-    background: rgba(76, 85, 105, 0.4);
-}
-
-#entryHolder{
 
 }
 
-#date{
+
+
+#entries{
+    display: inline-flex;
+    /* width: 460px; */
+}
+
+#entry{
+    width: 210px;
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+    margin: 5px;
+    border-radius: 10px;
+    animation-name: glowFx;
+    animation-duration: 0.5s;
+    box-shadow: 3px 7px 9px rgba(0, 0, 0, 0.514);
+}
+
+@keyframes glowFx {
+    from {background-color: #ffffff;}
+    to {background-color: #000000;}
+}
+
+textarea{
+    box-shadow: 3px 7px 9px rgba(0, 0, 0, 0.514);
 
 }
+
 
 #temp{
 
@@ -42,7 +64,14 @@ body{
 }
 
 .headline {
-
+    background:#ffffff;
+    color: #8d4545;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 3px 7px 9px rgba(0, 0, 0, 0.514);
+    border: 10px;
 }
 .title{
 
@@ -55,23 +84,23 @@ label{
 
 input{
     /* display:block; */
-    height: 40px;
-    width: 180px;
     background:#ffffff;
     color: #8d4545;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    /* border: none; */
+    text-align: center;
 }
 
+
 button{
-    /* width: 320px; */
     height: 60px;
+    width: 160px;
+
     background:#ffffff;
-    color: #8d4545;
+    color: #000000;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
- 
+    box-shadow: 3px 7px 9px rgba(0, 0, 0, 0.514);
 }
 h1{
     font-size: 36px;

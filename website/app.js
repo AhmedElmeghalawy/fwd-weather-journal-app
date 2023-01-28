@@ -6,7 +6,6 @@ let customUserDataObject = {
   zipCode: "",
   fealings: "",
 
-  unitType: "",
   countryCode: "",
 
   cityName: "",
@@ -25,8 +24,7 @@ document.getElementById("generate").onclick = function () {
   //Get weather data from "OpenWeatherApp" based on the inputs that was enterd by the user
   retrieveDataFromOpenWeatherApp();
 
-  //Sending the the custome data object (user Inputs data + weather data ) to (my)Server.
-  postDataToServer();
+
 };
 
 document.getElementById("testing").onclick = function () {
@@ -37,7 +35,6 @@ function testingData() {
   console.log("Using Dummy data!");
   document.getElementById("zip").value = "34510";
   document.getElementById("feelings").value = "I feel Awesome! 😎";
-  document.getElementById("unitType").value = "imperial"; //imperial,metric
   document.getElementById("countryCode").value = "fr"; //us,fr,eg,uk, etc...
 }
 
@@ -45,7 +42,6 @@ function getUserInputData() {
   //user input Data from the front-end/DOM elemnts value
   customUserDataObject.zipCode = document.getElementById("zip");
   customUserDataObject.fealings = document.getElementById("feelings");
-  customUserDataObject.unitType = document.getElementById("unitType");
   customUserDataObject.countryCode = document.getElementById("countryCode");
 
   //date assigned dynamicly using JS
@@ -58,7 +54,7 @@ function getUserInputData() {
 //and using the developer's(الي هو انا يعني😁) API key to get the data we want...
 const retrieveDataFromOpenWeatherApp = async () => {
   const request = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?zip=${customUserDataObject.zipCode.value},${customUserDataObject.countryCode.value}&appid=${apiKey}&units=${customUserDataObject.unitType}`
+    `https://api.openweathermap.org/data/2.5/weather?zip=${customUserDataObject.zipCode.value},${customUserDataObject.countryCode.value}&appid=${apiKey}&units=imperial`
   );
   try {
     // Transform into JSON
@@ -72,9 +68,12 @@ const retrieveDataFromOpenWeatherApp = async () => {
     console.log("error", error);
     // appropriately handle the error
   }
+
+  //Sending the the custome data object (user Inputs data + weather data ) to (my)Server.
+  postDataToServer();
 };
 
-postDataToServer = function (){
+postDataToServer = function () {
   fetch(`http://127.0.0.1/post1`, {
     method: "POST",
     headers: {
@@ -82,28 +81,33 @@ postDataToServer = function (){
       'Content-Type': "application/json",
     },
 
-    body: JSON.stringify({customUserDataObject}) 
+    body: JSON.stringify({ customUserDataObject })
   });
 
-    // customUserDataObject.cityName = allData.name;
-    // customUserDataObject.temp = allData.main.temp;
-    // customUserDataObject.Country = allData.sys.country;
-
-    //Updating the UI
-    UpdateUI(customUserDataObject);
+  //Updating the UI
+  UpdateUI(customUserDataObject);
 };
 
 function UpdateUI(customUserDataObject) {
 
-  const logString = `
-    Country: ${customUserDataObject.Country} |
-    city name: ${customUserDataObject.cityName} |
-    temperature: ${Math.round(customUserDataObject.temp)} degrees |
-    Date: ${customUserDataObject.newDate} |
-    Feelings: ${customUserDataObject.fealings.value}
-    `;
+  const entriesCount = document.querySelectorAll("#entry");
+  if (entriesCount.length >= 3) {
+    entriesCount[0].remove();
+  }
+
 
   // Write updated data to DOM elements
-  document.getElementById("content").innerHTML = logString;
-  console.log("UI Updated!");
+  const entries = document.getElementById("entries");
+
+  const newelment = document.createElement("div");
+  newelment.id = "entry";
+  newelment.innerHTML += `
+      <div id="country">Country: ${customUserDataObject.Country} </div>
+      <div id="city">City: ${customUserDataObject.cityName} </div>
+      <div id="temp">Temperature: ${customUserDataObject.temp} degrees </div>
+      <div id="date">Date: ${customUserDataObject.newDate}</div>
+      <div id="feelings-content">Feelings: ${customUserDataObject.fealings.value}</div>
+    `
+    entries.appendChild(newelment);
+
 }

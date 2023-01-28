@@ -12,26 +12,23 @@
 <body>
   <div id="app">
     <div>
-
       <div class="holder headline">
         Weather Journal App
       </div>
-
-      <div class="holder zip">
-      </div>
-
       <div class="holder">
-        <label for="zip"> Enter Zipcode here</label>
+        <label for="zip">Zipcode:</label>
+        <input type="text" id="zip" class="holder" placeholder="zip code">
+      </div>
+      <div>
+      </div>
+      <div class="holder">
+        <label for="countryCode">Contry Code:</label>
+        <input type="text" id="countryCode" class="holder" placeholder="contry code">
       </div>
 
-      <div>
-        <input type="text" id="zip"  class="holder" placeholder="zip code">
-        <input type="text" id="unitType"  class="holder" placeholder="Measurement" disable>
-        <input type="text" id="countryCode"  class="holder" placeholder="Contry Code">
-      </div>
 
       <div>
-        <label for="feelings"  class="holder">How are you feeling today?</label>
+        <label for="feelings" class="holder">How are you feeling today?</label>
       </div>
 
       <div>
@@ -39,25 +36,18 @@
           cols="50"></textarea>
       </div>
 
-      <div>
-        
+      <div class="buttonParent">
+
         <button id="testing" class="holder feel" type="submit"> Testing </button>
         <button id="generate" class="holder feel" type="submit"> Generate </button>
       </div>
 
 
 
-      <div class="title">Most Recent Entry:</div>
+      <div class="title">Most Recent Entries:</div>
 
-      <div class="holder entry">
-        <div id="entryHolder">
-          <div id="dataTemplate">
-            <div id="date"></div>
-            <div id="temp"></div>
-            <div id="content"></div>
-          </div>
-
-        </div>
+      <div id="entries">
+        
       </div>
     </div>
   </div>
