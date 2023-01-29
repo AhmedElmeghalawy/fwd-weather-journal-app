@@ -16,7 +16,12 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static("website"));
 
-app.post("/post1", function (req, res) {
+app.get("/getData", function (req, res) {
+  res.send(projectData).status(200);
+});
+
+
+app.post("/postData", function (req, res) {
 
   projectData = {
     zipCode: req.body.zipCode,
@@ -34,9 +39,6 @@ app.post("/post1", function (req, res) {
   res.send(projectData).status(200);
 });
 
-app.get("/get", function (req, res) {
-  res.send(projectData).status(200);
-});
 
 // Setup Server
 let port = 80;
@@ -49,4 +51,3 @@ function listening() {
   console.log(`running on localhost: ${port}`);
 }
 
-//https://review.udacity.com/#!/rubrics/4671/view

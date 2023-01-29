@@ -27,13 +27,12 @@ body{
 }
 
 
-
 #entries{
     display: inline-flex;
     /* width: 460px; */
 }
 
-#entry{
+#entryHolder {
     width: 210px;
     color: #ffffff;
     background: rgb(0, 0, 0);
