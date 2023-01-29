@@ -26,5 +26,5 @@
 -the website is compatime with small screens
 
 
-# Feature Developer :P
+# Feature Developer :D
 **[Ahmed El Meghalawy](https://github.com/AhmedElmeghalawy/)**
