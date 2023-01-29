@@ -7,10 +7,15 @@
 -simply just add the location's zip code and you will get some basic weather information...
 
 ## Instructions For installing the app on your local machine
--install NodeJS
--install the packages express, cors, body-parser
--run "node server.js"
--and BAAAAAAAM!😁
+
+-install NodeJS.
+
+-install the packages express, cors, body-parser.
+
+-run "node server.js".
+
+-and BAAAAAAAM!😁.
+
 ## features
 -the website is compatime with small screens
 
