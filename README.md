@@ -8,13 +8,19 @@
 
 ## Instructions For installing the app on your local machine
 
--install NodeJS.
+-Install NodeJS.
 
--install the packages express, cors, body-parser.
+-Install the packages express, cors, body-parser.
 
--run "node server.js".
+-Make an account on openWeatherApp nad generate your unique api key.
 
--and BAAAAAAAM!😁.
+-Replace the api key with yours.
+
+-Run "node server.js".
+
+-type "127.0.0.1:80" or type "127.0.0.1:80" in your browser.
+
+-Enter and BAAAAAAAM!😁 you got your own weather app.
 
 ## features
 -the website is compatime with small screens
